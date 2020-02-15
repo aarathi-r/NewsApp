@@ -1,5 +1,11 @@
 package com.example.newsapp.data;
 
+import android.media.Image;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
+
 public class NewsItem {
     private NewsSource source;
     private String author;

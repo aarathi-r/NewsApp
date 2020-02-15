@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 
 import com.example.newsapp.R;
 import com.example.newsapp.data.NewsItem;
@@ -25,6 +26,7 @@ public class NewsFragment extends Fragment {
     private NewsPresenter mPresenter;
     NewsAdapter mAdapter;
     RecyclerView mNewsListView;
+    ImageView mSortButton;
 
     /**
      * Create new fragment instance
@@ -77,9 +79,21 @@ public class NewsFragment extends Fragment {
         if (mPresenter != null && mNewsUrl != null) {
             mPresenter.fetchNewsData(mNewsUrl);
         }
+
+        mSortButton = v.findViewById(R.id.sort_icon);
+        mSortButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortNews();
+            }
+        });
     }
 
     public void newsDataAvailable(List<NewsItem> newsItems) {
         mAdapter.updateNews(newsItems);
+    }
+
+    private void sortNews() {
+        mAdapter.sortAndShow();
     }
 }

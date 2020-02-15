@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newsapp.R;
+import com.example.newsapp.data.DateComparator;
 import com.example.newsapp.data.NewsItem;
 
 import java.util.List;
@@ -54,5 +55,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
             return mNewsItems.size();
         }
         return 0;
+    }
+
+    public void sortAndShow() {
+        mNewsItems.sort(new DateComparator().getOldToNewComparator());
+        notifyDataSetChanged();
     }
 }
