@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_corner">5dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="news_margin">5dp</dimen>
+    <dimen name="page_title_margin_left_right">5dp</dimen>
+    <dimen name="page_title_size">30sp</dimen>
+    <dimen name="title_size">15sp</dimen>
+    <dimen name="author_margin_top">2dp</dimen>
+    <dimen name="author_published_at_top">1dp</dimen>
+</resources>
