@@ -27,6 +27,7 @@ public class NewsFragment extends Fragment {
     NewsAdapter mAdapter;
     RecyclerView mNewsListView;
     ImageView mSortButton;
+    boolean mSortOrderNewToOld;
 
     /**
      * Create new fragment instance
@@ -49,6 +50,7 @@ public class NewsFragment extends Fragment {
             mNewsUrl = getArguments().getString(URL_KEY);
         }
         mPresenter = new NewsPresenter(this);
+        mSortOrderNewToOld = true;
     }
 
     @Override
@@ -84,7 +86,7 @@ public class NewsFragment extends Fragment {
         mSortButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                sortNews();
+                sortNews(mSortOrderNewToOld);
             }
         });
     }
@@ -93,7 +95,12 @@ public class NewsFragment extends Fragment {
         mAdapter.updateNews(newsItems);
     }
 
-    private void sortNews() {
-        mAdapter.sortAndShow();
+    private void sortNews(boolean sortOrderNewToOld) {
+        if (mSortOrderNewToOld == true) {
+            mSortOrderNewToOld = false;
+        } else {
+            mSortOrderNewToOld = true;
+        }
+        mAdapter.sortAndShow(sortOrderNewToOld);
     }
 }

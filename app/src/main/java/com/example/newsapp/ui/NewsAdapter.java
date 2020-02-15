@@ -56,8 +56,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsItemViewHolder> {
         return 0;
     }
 
-    public void sortAndShow() {
-        mNewsItems.sort(new DateComparator().getOldToNewComparator());
-        notifyDataSetChanged();
+    public void sortAndShow(boolean sortOrderNewToOld) {
+        if (sortOrderNewToOld) {
+            mNewsItems.sort(new DateComparator().getNewToOldComparator());
+            notifyDataSetChanged();
+        } else {
+            mNewsItems.sort(new DateComparator().getOldToNewComparator());
+            notifyDataSetChanged();
+        }
     }
 }
