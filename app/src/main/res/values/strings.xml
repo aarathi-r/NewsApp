@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NewsApp</string>
     <string name="screen_tab_title">News</string>
+    <string name="sort_ascending">News listed from older to newer</string>
+    <string name="sort_descending">News listed from newer to older</string>
+    <string name="selected_number_text">%d selected</string>
+    <string name="no_news_available">No news available to show</string>
 </resources>

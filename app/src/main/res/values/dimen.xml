@@ -3,9 +3,15 @@
     <dimen name="card_corner">5dp</dimen>
     <dimen name="card_margin">5dp</dimen>
     <dimen name="news_margin">5dp</dimen>
-    <dimen name="page_title_margin_left_right">5dp</dimen>
     <dimen name="page_title_size">30sp</dimen>
     <dimen name="title_size">15sp</dimen>
     <dimen name="author_margin_top">2dp</dimen>
-    <dimen name="author_published_at_top">1dp</dimen>
+    <dimen name="author_published_at_margin_top">1dp</dimen>
+    <dimen name="app_bar_height">45dp</dimen>
+    <dimen name="app_bar_margin_left_right">5dp</dimen>
+    <dimen name="sort_icon_margin_left_right">3dp</dimen>
+    <dimen name="download_icon_margin_left_right">3dp</dimen>
+    <dimen name="sort_icon_padding_left_right">2dp</dimen>
+    <dimen name="download_icon_padding_left_right">2dp</dimen>
+    <dimen name="checkbox_margin_top">4dp</dimen>
 </resources>

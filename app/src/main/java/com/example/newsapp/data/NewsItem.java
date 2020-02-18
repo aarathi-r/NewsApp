@@ -15,6 +15,7 @@ public class NewsItem {
     private String urlToImage;
     private String publishedAt;
     private String content;
+    private boolean selected;
 
     public NewsSource getSource() {
         return source;
@@ -78,5 +79,13 @@ public class NewsItem {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean value) {
+        this.selected = value;
     }
 }

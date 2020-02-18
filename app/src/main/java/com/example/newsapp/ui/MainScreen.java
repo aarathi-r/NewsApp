@@ -15,17 +15,28 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
+        initNewsFragment(NEWS_URL);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        initNewsFragment(NEWS_URL);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
     private void initNewsFragment(String url) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.news_fragment, NewsFragment.newInstance(url));
-        ft.commit();
+        NewsFragment newsFragment = NewsFragment.newInstance(url);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.news_fragment, newsFragment);
+        fragmentTransaction.commit();
     }
 }

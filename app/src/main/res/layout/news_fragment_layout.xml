@@ -7,25 +7,72 @@
     tools:context=".ui.NewsFragment"
     android:background="@color/light_green">
     <RelativeLayout
+        android:id="@+id/selection_indicator_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/page_title_margin_left_right"
-        android:layout_marginRight="@dimen/page_title_margin_left_right">
+        android:layout_height="@dimen/app_bar_height"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/selected_number_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/selected_number_text"
+            android:textSize="@dimen/page_title_size"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:id="@+id/tick_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/tick"
+            android:layout_marginStart="@dimen/download_icon_margin_left_right"
+            android:layout_marginEnd="@dimen/download_icon_margin_left_right"
+            android:paddingStart="@dimen/download_icon_padding_left_right"
+            android:paddingEnd="@dimen/download_icon_padding_left_right"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:layout_marginLeft="@dimen/app_bar_margin_left_right"
+        android:layout_marginRight="@dimen/app_bar_margin_left_right"
+        android:gravity="center_vertical">
         <TextView
             android:id="@+id/screen_tab"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/screen_tab_title"
             android:textSize="@dimen/page_title_size"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:id="@+id/download_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/download"
+            android:layout_marginStart="@dimen/download_icon_margin_left_right"
+            android:layout_marginEnd="@dimen/download_icon_margin_left_right"
+            android:paddingStart="@dimen/download_icon_padding_left_right"
+            android:paddingEnd="@dimen/download_icon_padding_left_right"
+            android:layout_toStartOf="@+id/sort_icon"/>
+
         <ImageView
             android:id="@+id/sort_icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:scaleType="center"
             android:src="@drawable/sort"
-            android:layout_alignParentRight="true"/>
+            android:layout_marginStart="@dimen/sort_icon_margin_left_right"
+            android:layout_marginEnd="@dimen/sort_icon_margin_left_right"
+            android:paddingStart="@dimen/sort_icon_padding_left_right"
+            android:paddingEnd="@dimen/sort_icon_padding_left_right"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news_list"

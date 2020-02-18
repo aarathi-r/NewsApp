@@ -2,7 +2,6 @@ package com.example.newsapp.data;
 
 import android.util.Log;
 
-import java.security.PublicKey;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -36,7 +35,7 @@ public class DateComparator {
             try {
                 Date first = sdf.parse(date1);
                 Date second = sdf.parse(date2);
-                return first.compareTo(second);
+                return (-1*first.compareTo(second));
             } catch (ParseException e) {
                 Log.i("Test", "ParseException");
                 e.printStackTrace();
@@ -56,7 +55,7 @@ public class DateComparator {
             try {
                 Date first = sdf.parse(date1);
                 Date second = sdf.parse(date2);
-                return (-1*first.compareTo(second));
+                return first.compareTo(second);
             } catch (ParseException e) {
                 Log.i("Test", "ParseException");
                 e.printStackTrace();

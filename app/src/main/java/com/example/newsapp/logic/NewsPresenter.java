@@ -21,7 +21,19 @@ public class NewsPresenter {
         mModel.fetchNewsData(url);
     }
 
+    public void fetchOfflineNews() {
+        mModel.fetchOfflineNews();
+    }
+
+    public void saveDataToDb(List<NewsItem> newsItems) {
+        mModel.saveDataToDb(newsItems);
+    }
+
     public void onNewsDataAvailable(List<NewsItem> newsItems) {
         fragment.get().newsDataAvailable(newsItems);
+    }
+
+    public NewsFragment getView() {
+        return fragment.get();
     }
 }

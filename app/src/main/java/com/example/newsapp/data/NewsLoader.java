@@ -86,6 +86,5 @@ public class NewsLoader extends AsyncTask<String,Void,List<NewsItem>> {
         if (mListener != null) {
             mListener.onNewsFetchCompleted(newsItems);
         }
-
     }
 }
